@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "taggingjs": {}
+    },
+    "packages": {
+      "taggingjs": {
+        "git": "https://github.com/purplechap/meteor-taggingjs.git",
+        "tag": "v0.0.3",
+        "commit": "7f144385666ae7c611ef1550b6ca11710d378b80"
+      }
+    }
+  }
+}
