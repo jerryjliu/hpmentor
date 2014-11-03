@@ -1,0 +1,9 @@
+.formcontainer, .formdone {
+  margin: 0 auto;
+  width:70%;
+}
+
+#tagBox {
+  vertical-align: top;
+  height:60%;
+}

@@ -1,0 +1,50 @@
+
+<template name="mentorform">
+  <body class="body">
+    <h1 id="mentors">MENTORS</h1>
+    <img src="logo.png">
+  	<h2 id="hack">HACKPRINCETON</h2>
+    <div class="formcontainer" id="formcontainer">
+      <form class="form-horizontal" role="form" id="form-submit">
+        <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="name" placeholder="Name" id="form_name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="help_msg" class="col-lg-2 control-label">Describe your problem</label>
+            <div class="col-lg-6">
+                <textarea class="form-control" rows="5" name="msg" id="form_msg"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="help_msg" class="col-lg-2 control-label">Categories</label>
+          <div class="col-lg-6">
+            <div data-tags-input-name="tag" id="tagBox">tags</div>
+          </div>
+        </div>
+         <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Contact Info</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="contact" id="form_contact" placeholder="(Phone, Email, etc.)">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Location</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="location" id="form_location" placeholder="<Building> <Room #>">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+      </form>
+    </div>
+    <div id="formdone" class="formdone" style="display:none">
+      Thank you for your request. We'll try our best to have a mentor reach out to you shortly.
+    </div>
+  </body>
+</template>

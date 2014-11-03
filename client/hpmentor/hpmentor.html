@@ -1,0 +1,98 @@
+
+<template name="hpmentor">
+  <body class="body">
+  	<h1 id="mentors">MENTORS</h1>
+    <img src="logo.png">
+  	<h2 id="hack">HACKPRINCETON</h2>
+
+    <table class="categories">
+      <tr>
+        <td>software</td>
+        <td>hardware</td>
+        <td>mongodb</td>
+        <td>bloomberg</td>
+        <td>server</td>
+        <td>databases</td>
+        <td>merp</td>
+      </tr>
+    </table>
+
+    <br/>
+
+    <div class="qcard">
+      <div class="text">
+        <table class="cat">
+          <tr>
+            <td>bloomberg</td>
+            <td>servers</td>
+          </tr>
+        </table>
+        <p class="question">Can I have help with ...... CRYING WHAT IS LIFE OMG</p>
+        <p class="info">Name: Irvin Zhan <i class="fa fa-phone"></i>: 123-456-7890 Location: Friend 101</p>
+      </div>
+      <button type="button" class="btn btn-success go">
+        <i class="fa fa-check fa-inverse fa-lg"></i>
+      </button>
+    </div>
+
+    <div class="qcard">
+      <div class="text">
+        <table class="cat">
+          <tr>
+            <td>kittens</td>
+            <td>puppies</td>
+          </tr>
+        </table>
+        <p class="question">Can I have help with ...... CRYING WHAT IS LIFE OMG</p>
+        <table class="info">
+            <tr>
+                <td>Name: Hansen Qian</td>
+                <td><i class="fa fa-phone "></i>: 123-456-7890</td> 
+                <td>Location: Frist Late Meal</td>
+            </tr>
+        </table>
+      </div>
+      <button type="button" class="btn btn-success go">
+        I'll help!
+      </button>
+    </div>
+    
+    {{#each requests}}
+    <div class="qcard">
+      <div class="text">
+        <table class="cat">
+          <tr>
+            {{#each tags}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+        </table>
+        <p class="question">{{ description }}</p>
+        <table class="info">
+            <tr>
+                <td>Name: {{name}}</td>
+                <td><i class="fa fa-phone "></i>: {{contact}}</td> 
+                <td>Location: {{location}}</td>
+            </tr>
+        </table>
+      </div>
+      {{#if statusg}}
+        <button type="button" class="btn btn-success go" id="{{ _id }}">
+          I'll help!
+        </button>
+      {{/if}}
+      {{#if statusy}}
+        <button type="button" class="btn btn-warning go" id="{{ _id }}">
+          Helping!
+        </button>
+      {{/if}}
+      {{#if statusr}}
+        <button type="button" class="btn btn-danger go" id="{{ _id }}">
+          Help finished!
+        </button>
+      {{/if}}
+    </div>
+    {{/each}}
+    
+  </body>
+</template>
