@@ -1,9 +1,15 @@
 .formcontainer, .formdone {
   margin: 0 auto;
   width:70%;
+  margin-left: 22.5%;
 }
 
 #tagBox {
   vertical-align: top;
   height:60%;
+}
+
+.btn {
+  width: 85px;
+  padding-left: -webkit-calc (100% - 85px);
 }
