@@ -1,11 +1,36 @@
 <template name="SignUp">
-
-    <form action="/" id="signUpForm" method="post">
-        <input id="signUpEmail" name="email" placeholder="Email Address" type="text" >
-        <input id="signUpPassword" name="password" placeholder="Password" type="password">
-        <input id="signUpPasswordConfirm" name="password-confirm" placeholder="Confirm" type="password">
-        <input class="btn-submit" type="submit" value="Submit!">
-    </form>
+	<body class="body">
+	  	<h1 id="mentors">MENTORS</h1>
+	    <img src="logo.png">
+	  	<h2 id="hack">HACKPRINCETON</h2>
+	    <div id="padding"></div>
+	    <form action="/" id="signUpForm" method="post" class="form-horizontal" role="form">
+          <div class="header-text">
+          	SIGNUP
+          </div>
+	      <div class="form-group">
+	        <div>
+	          <input type="signUpEmail" name="email" class="form-control" id="inputEmail3" placeholder="email">
+	        </div>
+	      </div>
+	      <div class="form-group">
+	        <div>
+	          <input type="signUpPassword" name="password" class="form-control" id="inputPassword3" placeholder="password">
+	        </div>
+	      </div>
+	      <div class="form-group">
+	        <div>
+	          <input type="signUpPasswordConfirm" name="password-confirm" class="form-control" id="inputPassword3" placeholder="confirm password">
+	        </div>
+	      </div>
+	      <div class="form-group">
+	        <div>
+	          <button type="btn-submit" class="btn-submit btn-primary btn-sm btn-block">Sign in</button>
+	        </div>
+	      </div>
+	    </form>
+	    <div id="padding"></div>
+    </body>
     <!-- end #sign-up-form -->
 
 </template>

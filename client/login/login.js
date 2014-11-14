@@ -43,7 +43,7 @@ areValidPasswords = function(password, confirm) {
 if (Meteor.isClient) {
     /* SIGNUP: Second system */
     Template.SignUp.events({
-      'click button': function(e) {
+      'click button #btn-submit': function(e) {
         e.preventDefault();
 
         var signUpForm = $(e.currentTarget),
@@ -72,7 +72,7 @@ if (Meteor.isClient) {
 
     /* SIGNIN: Third system */
     Template.SignIn.events({
-      'click button': function(e, t) {
+      'click button #btn-submit': function(e, t) {
         e.preventDefault();
 
         var signInForm = $(e.currentTarget),
@@ -96,7 +96,7 @@ if (Meteor.isClient) {
 
     /* SIGN OUT: Fourth system */
     Template.SignOut.events({
-      'click #signOut': function(e, t) {
+      'click button #btn-submit': function(e, t) {
 
         Meteor.logout(function() {
           console.log('Bye Meteorite! Come back whenever you want!');
