@@ -1,0 +1,32 @@
+<template name="SignUp">
+
+    <form action="/sign-up" id="signUpForm" method="post">
+        <input id="signUpEmail" name="email" placeholder="Email Address" type="text" >
+        <input id="signUpPassword" name="password" placeholder="Password" type="password">
+        <input id="signUpPasswordConfirm" name="password-confirm" placeholder="Confirm" type="password">
+        <input class="btn-submit" type="submit" value="Join Meteorites!">
+    </form>
+    <!-- end #sign-up-form -->
+
+</template>
+
+<template name="SignIn">
+
+    <form action="/signin" id="signInForm" method="post">
+        <input id="signInEmail" type="text" name="email" placeholder="Email Address">
+        <input id="signInPassword" type="password" name="password" placeholder="Password">
+        <input class="btn-submit" type="submit" value="Sign In">
+    </form>
+    <!-- end #sign-in-form -->
+
+</template>
+
+<template name="SignOut">
+
+    <div class="connected">
+        <span class="welcome">Welcome New Meteorite!</span>
+        <a class="sign-out" href="/" id="signOut">Sign Out</a>
+    </div>
+    <!-- end .connected -->
+
+</template>
