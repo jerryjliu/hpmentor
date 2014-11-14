@@ -43,7 +43,7 @@ areValidPasswords = function(password, confirm) {
 if (Meteor.isClient) {
     /* SIGNUP: Second system */
     Template.SignUp.events({
-      'submit #signUpForm': function(e, t) {
+      'click button': function(e) {
         e.preventDefault();
 
         var signUpForm = $(e.currentTarget),
@@ -72,7 +72,7 @@ if (Meteor.isClient) {
 
     /* SIGNIN: Third system */
     Template.SignIn.events({
-      'submit #signInForm': function(e, t) {
+      'click button': function(e, t) {
         e.preventDefault();
 
         var signInForm = $(e.currentTarget),

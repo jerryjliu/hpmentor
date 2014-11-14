@@ -1,0 +1,16 @@
+#submit {
+	width:100%;
+}
+
+.form-horizontal {
+	color: white;
+	padding: 50px;
+	background-color: #bAbBbD;
+	border-radius: 5px;
+	width:35%;
+	margin-left: 32.5%;
+}
+
+#padding {
+	height: 30px;
+}
