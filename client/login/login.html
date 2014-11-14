@@ -10,17 +10,17 @@
           </div>
 	      <div class="form-group">
 	        <div>
-	          <input type="signUpEmail" name="email" class="form-control" id="inputEmail3" placeholder="email">
+	          <input id="signUpEmail" type="text" class="form-control" placeholder="email">
 	        </div>
 	      </div>
 	      <div class="form-group">
 	        <div>
-	          <input type="signUpPassword" name="password" class="form-control" id="inputPassword3" placeholder="password">
+	          <input id="signUpPassword" type="password" class="form-control" placeholder="password">
 	        </div>
 	      </div>
 	      <div class="form-group">
 	        <div>
-	          <input type="signUpPasswordConfirm" name="password-confirm" class="form-control" id="inputPassword3" placeholder="confirm password">
+	          <input id="signUpPasswordConfirm" type="password-confirm" class="form-control" placeholder="confirm password">
 	        </div>
 	      </div>
 	      <div class="form-group">
@@ -36,12 +36,33 @@
 </template>
 
 <template name="SignIn">
-
-    <form action="/signin" id="signInForm" method="post">
-        <input id="signInEmail" type="text" name="email" placeholder="Email Address">
-        <input id="signInPassword" type="password" name="password" placeholder="Password">
-        <input class="btn-submit" type="submit" value="Sign In">
-    </form>
+    <body class="body">
+	  	<h1 id="mentors">MENTORS</h1>
+	    <img src="logo.png">
+	  	<h2 id="hack">HACKPRINCETON</h2>
+	    <div id="padding"></div>
+	    <form action="/" id="signInForm" method="post" class="form-horizontal" role="form">
+          <div class="header-text">
+          	LOGIN
+          </div>
+	      <div class="form-group">
+	        <div>
+	          <input id="signInEmail" type="text" class="form-control" placeholder="email">
+	        </div>
+	      </div>
+	      <div class="form-group">
+	        <div>
+	        <input id="signInPassword" type="password" class="form-control" name="password" placeholder="password">
+	        </div>
+	      </div>
+	      <div class="form-group">
+	        <div>
+	          <button type="btn-submit" class="btn-submit btn-primary btn-sm btn-block">Sign in</button>
+	        </div>
+	      </div>
+	    </form>
+	    <div id="padding"></div>
+    </body>
     <!-- end #sign-in-form -->
 
 </template>
@@ -50,7 +71,7 @@
 
     <div class="connected">
         <span class="welcome">Welcome New Meteorite!</span>
-        <a class="sign-out" href="/" id="signOut">Sign Out</a>
+        <a class="signin" href="/" id="signOut">Sign Out</a>
     </div>
     <!-- end .connected -->
 
