@@ -12,7 +12,7 @@ if (Meteor.isClient) {
   });
 
   Template.hpmentor.events({
-    'click button .signout': function(event) {
+    'click a .signout': function(event) {
       Meteor.logout(function() {
         Router.go('/signout')
         console.log('Logged out');
