@@ -43,27 +43,25 @@ areValidPasswords = function(password, confirm) {
 if (Meteor.isClient) {
     /* SIGNUP: Second system */
     Template.SignUp.events({
-      'click button #btn-submit': function(e) {
+      'click button': function(e) {
         e.preventDefault();
 
-        var signUpForm = $(e.currentTarget),
-            email = trimInput(signUpForm.find('#signUpEmail').val().toLowerCase()),
-            password = signUpForm.find('#signUpPassword').val(),
-            passwordConfirm = signUpForm.find('#signUpPasswordConfirm').val();
-
+        var email = trimInput($('#signUpEmail').val().toLowerCase()),
+            password = $('#signUpPassword').val(),
+            passwordConfirm = $('#signUpPasswordConfirm').val();
         if (isNotEmpty(email) && isNotEmpty(password) && isEmail(email) && areValidPasswords(password, passwordConfirm)) {
 
           Accounts.createUser({email: email, password: password}, function(err) {
             if (err) {
-              window.alert("Test");
+              alert("Test");
               if (err.message === 'Email already exists. [403]') {
-                window.alert('We are sorry but this email is already used.');
+                alert('We are sorry but this email is already used.');
               } else {
-                window.alert('We are sorry but something went wrong.');
+                alert('We are sorry but something went wrong.');
               }
             } else {
               Router.go('/questions');
-              window.alert('Congrats new Meteorite, you\'re in!');
+              alert('Congrats new Meteorite, you\'re in!');
             }
           });
 
@@ -76,10 +74,10 @@ if (Meteor.isClient) {
     Template.SignIn.events({
       'click button #btn-submit': function(e, t) {
         e.preventDefault();
-
-        var signInForm = $(e.currentTarget),
-              email = trimInput(signInForm.find('.email').val().toLowerCase()),
-              password = signInForm.find('.password').val();
+        console.log("hello");
+        var email = trimInput($('.email').val().toLowerCase()),
+            password = $('.password').val();
+        console.log(email);
 
         if (isNotEmpty(email) && isEmail(email) && isNotEmpty(password) && isValidPassword(password)) {
 
