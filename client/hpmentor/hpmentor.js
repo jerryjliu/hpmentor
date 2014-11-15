@@ -25,17 +25,20 @@ if (Meteor.isClient) {
       var id = event.currentTarget.id;
       var requests = Requests.find({_id: id}).fetch();
       var request = requests[0];
-      /*alert(Meteor.user.find_id;);*/
-      var existingrequest = Requests.find({_id: id});
-      if (existingrequest.mentor == null) {
+      if (request.mentor == null) {
         Requests.update({_id: id}, {$set: {mentor: Meteor.user().profile.firstname}});
       }
-      if (existingrequest.mentor != Meteor.user().profile.firstname) {
+      if (request.mentor == Meteor.user().profile.firstname || request.mentor == null) {
+
         if (request.statusg) {
           Requests.update({_id: id}, {$set: {statusg: null, statusy: true}});
         }
         else if (request.statusy) {
-          Requests.update({_id: id}, {$set: {statusy: null, statusr: true}});
+          //Requests.update({_id: id}, {$set: {statusy: null, statusr: true}});
+          $("#" + id).attr("class", "btn btn-danger go");
+          setTimeout(function(){
+            Requests.remove({_id: id});
+          }, 1000);
         }
       }
     }
