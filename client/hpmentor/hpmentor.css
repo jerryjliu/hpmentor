@@ -24,6 +24,14 @@ img {
   padding-bottom: 30px;
 }
 
+#nav1 td {
+  width:50px;
+}
+
+#nav {
+  margin-left: -webkit-calc(100% - 100px);
+}
+
 /* Categories */
 .categories {
   width: -webkit-calc(65% - 40px);

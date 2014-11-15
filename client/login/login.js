@@ -55,13 +55,15 @@ if (Meteor.isClient) {
 
           Accounts.createUser({email: email, password: password}, function(err) {
             if (err) {
+              window.alert("Test");
               if (err.message === 'Email already exists. [403]') {
-                console.log('We are sorry but this email is already used.');
+                window.alert('We are sorry but this email is already used.');
               } else {
-                console.log('We are sorry but something went wrong.');
+                window.alert('We are sorry but something went wrong.');
               }
             } else {
-              console.log('Congrats new Meteorite, you\'re in!');
+              Router.go('/questions');
+              window.alert('Congrats new Meteorite, you\'re in!');
             }
           });
 
@@ -83,8 +85,10 @@ if (Meteor.isClient) {
 
           Meteor.loginWithPassword(email, password, function(err) {
             if (err) {
+              Router.go('/signin');
               console.log('These credentials are not valid.');
             } else {
+              Router.go('/questions');
               console.log('Welcome back Meteorite!');
             }
           });
@@ -92,18 +96,6 @@ if (Meteor.isClient) {
         }
         return false;
       },
-    });
-
-    /* SIGN OUT: Fourth system */
-    Template.SignOut.events({
-      'click button #btn-submit': function(e, t) {
-
-        Meteor.logout(function() {
-          console.log('Bye Meteorite! Come back whenever you want!');
-        });
-
-        return false;
-      }
     });
 
     Meteor.startup(function() {

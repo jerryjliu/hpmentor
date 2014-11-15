@@ -4,7 +4,7 @@
 	    <img src="logo.png">
 	  	<h2 id="hack">HACKPRINCETON</h2>
 	    <div id="padding"></div>
-	    <form action="/" id="signUpForm" method="post" class="form-horizontal" role="form">
+	    <form id="signUpForm" class="login" role="form">
           <div class="header-text">
           	SIGNUP
           </div>
@@ -20,15 +20,16 @@
 	      </div>
 	      <div class="form-group">
 	        <div>
-	          <input id="signUpPasswordConfirm" type="password-confirm" class="form-control" placeholder="confirm password">
+	          <input id="signUpPasswordConfirm" type="password" class="form-control" placeholder="confirm password">
 	        </div>
 	      </div>
 	      <div class="form-group">
 	        <div>
-	          <button type="btn-submit" class="btn-submit btn-primary btn-sm btn-block">Sign in</button>
+	          <button type="btn-submit" class="btn-submit btn-primary btn-sm btn-block">Sign up</button>
 	        </div>
 	      </div>
 	    </form>
+	    <div id="padding"></div>
 	    <div id="padding"></div>
     </body>
     <!-- end #sign-up-form -->
@@ -41,7 +42,7 @@
 	    <img src="logo.png">
 	  	<h2 id="hack">HACKPRINCETON</h2>
 	    <div id="padding"></div>
-	    <form action="/" id="signInForm" method="post" class="form-horizontal" role="form">
+	    <form id="signInForm" class="login" role="form">
           <div class="header-text">
           	LOGIN
           </div>
@@ -62,17 +63,21 @@
 	      </div>
 	    </form>
 	    <div id="padding"></div>
+	    <div id="padding"></div>
     </body>
     <!-- end #sign-in-form -->
 
 </template>
 
 <template name="SignOut">
-
-    <div class="connected">
-        <span class="welcome">Welcome New Meteorite!</span>
-        <a class="signin" href="/" id="signOut">Sign Out</a>
-    </div>
-    <!-- end .connected -->
+	<body class="body">
+	  	<h1 id="mentors">MENTORS</h1>
+	    <img src="logo.png">
+	  	<h2 id="hack">HACKPRINCETON</h2>
+	    <div id="padding"></div>
+	    Sucessfully logged out.
+	    <div id="padding"></div>
+    </body>
+    <!-- Sucessful signout -->
 
 </template>

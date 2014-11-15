@@ -12,6 +12,14 @@ if (Meteor.isClient) {
   });
 
   Template.hpmentor.events({
+    'click button .signout': function(event) {
+      Meteor.logout(function() {
+        Router.go('/signout')
+        console.log('Logged out');
+      });
+
+      return false;
+    },
     'click button': function(event) {
       var id = event.currentTarget.id;
       var requests = Requests.find({_id: id}).fetch();
