@@ -12,11 +12,12 @@ if (Meteor.isClient) {
   });
 
   Template.hpmentor.events({
-    'click a .signout': function(event) {
-      Meteor.logout(function() {
-        Router.go('/signout')
-        console.log('Logged out');
-      });
+    'click a #signout': function(event) {
+      // alert('hello');
+      // Meteor.logout(function() {
+      //   Router.go('/signout')
+      //   console.log('Logged out');
+      // });
 
       return false;
     },
