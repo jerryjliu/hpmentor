@@ -53,7 +53,6 @@ if (Meteor.isClient) {
 
           Accounts.createUser({email: email, password: password}, function(err) {
             if (err) {
-              alert("Test");
               if (err.message === 'Email already exists. [403]') {
                 alert('We are sorry but this email is already used.');
               } else {
@@ -61,7 +60,7 @@ if (Meteor.isClient) {
               }
             } else {
               Router.go('/questions');
-              alert('Congrats new Meteorite, you\'re in!');
+              alert('Thanks for registering, you\'re in!');
             }
           });
 
@@ -72,22 +71,20 @@ if (Meteor.isClient) {
 
     /* SIGNIN: Third system */
     Template.SignIn.events({
-      'click button #btn-submit': function(e, t) {
+      'click button': function(e, t) {
         e.preventDefault();
-        console.log("hello");
-        var email = trimInput($('.email').val().toLowerCase()),
-            password = $('.password').val();
-        console.log(email);
+        var email = trimInput($('#signInEmail').val().toLowerCase()),
+            password = $('#signInPassword').val();
 
         if (isNotEmpty(email) && isEmail(email) && isNotEmpty(password) && isValidPassword(password)) {
 
           Meteor.loginWithPassword(email, password, function(err) {
             if (err) {
               Router.go('/signin');
-              console.log('These credentials are not valid.');
+              alert('These credentials are not valid.');
             } else {
               Router.go('/questions');
-              console.log('Welcome back Meteorite!');
+              alert('Welcome back!');
             }
           });
 
