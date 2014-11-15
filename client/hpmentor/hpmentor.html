@@ -1,18 +1,12 @@
 
 <template name="hpmentor">
   <body class="body">
-    <table id="nav1">
-        <tr>
-          <td><a href="/signin">signin</a></td>
-          <td><a id="signout" href="/signout">signout</a></td>
-        </tr>
-    </table>
+    <div id="signout1"><a id="signout" href="/signout">signout</a></div>
   	<h1 id="mentors">MENTORS</h1>
     <img src="logo.png">
   	<h2 id="hack">HACKPRINCETON</h2>
 
     <br/>
-    
     {{#each requests}}
     <div class="qcard">
       <div class="text">
@@ -41,11 +35,13 @@
         <button type="button" class="btn btn-warning go" id="{{ _id }}">
           Helping
         </button>
+        {{mentor}}
       {{/if}}
       {{#if statusr}}
         <button type="button" class="btn btn-danger go" id="{{ _id }}">
           Finished
         </button>
+        {{mentor}}
       {{/if}}
     </div>
     {{/each}}

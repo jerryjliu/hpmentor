@@ -12,12 +12,12 @@ if (Meteor.isClient) {
   });
 
   Template.hpmentor.events({
-    'click a #signout': function(event) {
-      // alert('hello');
-      // Meteor.logout(function() {
-      //   Router.go('/signout')
-      //   console.log('Logged out');
-      // });
+
+    'click #signout': function(event) {
+      Meteor.logout(function() {
+        Router.go('/signout');
+      });
+
 
       return false;
     },
@@ -25,14 +25,27 @@ if (Meteor.isClient) {
       var id = event.currentTarget.id;
       var requests = Requests.find({_id: id}).fetch();
       var request = requests[0];
-      if (request.statusg) {
-        Requests.update({_id: id}, {$set: {statusg: null, statusy: true}});
+      /*alert(Meteor.user.find_id;);*/
+      var existingrequest = Requests.find({_id: id});
+      if (existingrequest.mentor == null) {
+        Requests.update({_id: id}, {$set: {mentor: Meteor.user().profile.firstname}});
       }
-      else if (request.statusy) {
-        Requests.update({_id: id}, {$set: {statusy: null, statusr: true}});
+      if (existingrequest.mentor != Meteor.user().profile.firstname) {
+        if (request.statusg) {
+          Requests.update({_id: id}, {$set: {statusg: null, statusy: true}});
+        }
+        else if (request.statusy) {
+          Requests.update({_id: id}, {$set: {statusy: null, statusr: true}});
+        }
       }
     }
   });
+
+  Template.hpmentor.rendered = function() {
+    if (Meteor.user() == null) {
+      Router.go("/signin");
+    }
+  }
         
     Meteor.startup(function() {
         $('html').attr('style', 'background-color: #f5f5f5');

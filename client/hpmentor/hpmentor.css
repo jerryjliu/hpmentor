@@ -24,12 +24,9 @@ img {
   padding-bottom: 30px;
 }
 
-#nav1 td {
+#signout1 {
   width:50px;
-}
-
-#nav1 {
-  margin-left: -webkit-calc(100% - 100px);
+  margin-left: -webkit-calc(100% - 60px);
 }
 
 /* Categories */

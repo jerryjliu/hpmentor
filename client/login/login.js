@@ -7,7 +7,7 @@ isNotEmpty = function(value) {
     if (value && value !== ''){
         return true;
     }
-    console.log('Please fill in all required fields.');
+    alert('Please fill in all required fields.');
     return false;
 };
 
@@ -16,13 +16,13 @@ isEmail = function(value) {
     if (filter.test(value)) {
         return true;
     }
-    console.log('Please enter a valid email address.');
+    alert('Please enter a valid email address.');
     return false;
 };
 
 isValidPassword = function(password) {
     if (password.length < 6) {
-        console.log('Your password should be 6 characters or longer.');
+        alert('Your password should be 6 characters or longer.');
         return false;
     }
     return true;
@@ -33,7 +33,7 @@ areValidPasswords = function(password, confirm) {
         return false;
     }
     if (password !== confirm) {
-        console.log('Your two passwords are not equivalent.');
+        alert('Your two passwords are not equivalent.');
         return false;
     }
     return true;
@@ -47,11 +47,12 @@ if (Meteor.isClient) {
         e.preventDefault();
 
         var email = trimInput($('#signUpEmail').val().toLowerCase()),
+            name = $('#signUpName').val(),
             password = $('#signUpPassword').val(),
             passwordConfirm = $('#signUpPasswordConfirm').val();
         if (isNotEmpty(email) && isNotEmpty(password) && isEmail(email) && areValidPasswords(password, passwordConfirm)) {
 
-          Accounts.createUser({email: email, password: password}, function(err) {
+          Accounts.createUser({email: email, profile: {firstname:name}, password: password}, function(err) {
             if (err) {
               if (err.message === 'Email already exists. [403]') {
                 alert('We are sorry but this email is already used.');

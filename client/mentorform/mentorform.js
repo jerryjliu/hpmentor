@@ -11,21 +11,12 @@ if (Meteor.isClient) {
       Session.set("counter", Session.get("counter") + 1);
     },
     'submit' : function(event) {
-      alert('hi');
       var name = $("#form_name").val();
-            alert('hi');
       var description = $("#form_msg").val();
       var contactInfo = $("#form_contact").val();
-            alert('hi');
-
       var location = $("#form_location").val();
       var tag_box = tagBox[0];
-            alert('hi');
-
-      var tags = tag_box.tagging("getTags");
-
-      alert('hi');
-    
+      var tags = tag_box.tagging("getTags");    
       Requests.insert({
         name: name,
         description: description,
@@ -34,10 +25,9 @@ if (Meteor.isClient) {
         tags: tags,
         statusg: true,
         statusy: false,
-        statusr: false
+        statusr: false,
       });
 
-      alert('hi2');
       
       $("#formcontainer").hide();
       $("#formdone").show();
